@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Send,
@@ -100,9 +101,18 @@ export function Contact() {
           {/* Left: Contact Info & Value props */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 space-y-6">
-              <h3 className="text-xl font-bold text-white tracking-tight">
-                Directe verbinding met Agevo
-              </h3>
+              <div>
+                <Image
+                  src="/logo.png"
+                  alt="AgevoDev Software Development"
+                  width={200}
+                  height={60}
+                  className="h-10 sm:h-11 w-auto object-contain mb-4"
+                />
+                <h3 className="text-xl font-bold text-white tracking-tight">
+                  Directe verbinding met Agevo
+                </h3>
+              </div>
               <p className="text-sm text-slate-300 leading-relaxed">
                 Geen trage ticket-systemen. Wij reageren snel, denken proactief mee en leveren eerlijk technisch advies.
               </p>

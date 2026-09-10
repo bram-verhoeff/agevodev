@@ -39,9 +39,9 @@ export function Navbar() {
             <Image
               src="/logo.png"
               alt="AgevoDev Software Development"
-              width={160}
-              height={48}
-              className="h-9 sm:h-10 w-auto object-contain"
+              width={220}
+              height={66}
+              className="h-12 sm:h-14 w-auto object-contain"
               priority
             />
           </Link>

@@ -81,9 +81,9 @@ export function MeetingModal({ isOpen, onClose }: MeetingModalProps) {
                   <Image
                     src="/logo.png"
                     alt="AgevoDev Software Development"
-                    width={140}
-                    height={42}
-                    className="h-8 w-auto object-contain"
+                    width={180}
+                    height={54}
+                    className="h-10 sm:h-11 w-auto object-contain"
                   />
                 </div>
                 <div className="flex items-center gap-2 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">

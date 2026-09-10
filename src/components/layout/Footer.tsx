@@ -37,9 +37,9 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="AgevoDev Software Development"
-                width={170}
-                height={51}
-                className="h-10 w-auto object-contain"
+                width={220}
+                height={66}
+                className="h-13 sm:h-15 w-auto object-contain"
               />
             </Link>
 
