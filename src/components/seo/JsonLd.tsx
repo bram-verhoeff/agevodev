@@ -7,9 +7,11 @@ export function JsonLd() {
       {
         "@type": "Organization",
         "@id": `${siteConfig.url}/#organization`,
-        name: siteConfig.name,
-        legalName: siteConfig.name,
+        name: "AgevoDev",
+        legalName: "Agevo",
         url: siteConfig.url,
+        logo: `${siteConfig.url}/logo.png`,
+        image: `${siteConfig.url}/logo.png`,
         email: siteConfig.email,
         description: siteConfig.description,
         sameAs: [

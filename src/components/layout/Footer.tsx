@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Layers, ExternalLink, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -32,15 +33,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Col (2 cols on lg) */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 p-[1px]">
-                <div className="w-full h-full bg-[#05070c] rounded-[11px] flex items-center justify-center">
-                  <Layers className="w-4 h-4 text-indigo-400" />
-                </div>
-              </div>
-              <span className="text-xl font-black tracking-tight text-white font-sans">
-                Agevo
-              </span>
+            <Link href="/" className="inline-block group transition-transform hover:opacity-95">
+              <Image
+                src="/logo.png"
+                alt="AgevoDev Software Development"
+                width={170}
+                height={51}
+                className="h-10 w-auto object-contain"
+              />
             </Link>
 
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">

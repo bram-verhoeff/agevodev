@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, CheckCircle2, Clock, Sparkles, Send } from "lucide-react";
 
@@ -76,6 +77,15 @@ export function MeetingModal({ isOpen, onClose }: MeetingModalProps) {
 
             {step === "form" ? (
               <div>
+                <div className="mb-4">
+                  <Image
+                    src="/logo.png"
+                    alt="AgevoDev Software Development"
+                    width={140}
+                    height={42}
+                    className="h-8 w-auto object-contain"
+                  />
+                </div>
                 <div className="flex items-center gap-2 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">
                   <Sparkles className="w-4 h-4" />
                   Direct Schakelen

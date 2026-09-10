@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowUpRight, Layers, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { MeetingModal } from "@/components/ui/MeetingModal";
 
@@ -34,22 +35,15 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo / Wordmark */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-blue-600 p-[1px] shadow-lg shadow-indigo-500/20 group-hover:shadow-indigo-500/40 transition-all duration-300">
-              <div className="w-full h-full bg-[#07090e] rounded-[11px] flex items-center justify-center">
-                <Layers className="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform duration-300" />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="text-xl font-black tracking-tight text-white font-sans">
-                  Agevo
-                </span>
-                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/25">
-                  Dev
-                </span>
-              </div>
-            </div>
+          <Link href="/" className="flex items-center group transition-transform hover:opacity-95">
+            <Image
+              src="/logo.png"
+              alt="AgevoDev Software Development"
+              width={160}
+              height={48}
+              className="h-9 sm:h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

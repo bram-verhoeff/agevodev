@@ -134,7 +134,7 @@ export function Hero() {
                 <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                 <span className="text-xs font-mono text-slate-400 ml-2 hidden sm:inline">
-                  agevo-studio-core v2.4 (Production Engine)
+                  agevodev-engine v2.4 (Software Development)
                 </span>
               </div>
 
