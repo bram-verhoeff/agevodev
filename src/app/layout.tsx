@@ -94,6 +94,9 @@ export default function RootLayout({
       lang="nl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark scroll-smooth`}
     >
+      <head>
+        <meta name="google-site-verification" content="c_m0FINCca_lKCf_i7reBVdNV9rNcaHxZWzizhvuLm8" />
+      </head>
       <body className="min-h-full flex flex-col bg-[#07090e] text-slate-100 selection:bg-indigo-500 selection:text-white">
         <JsonLd />
         {children}
