@@ -8,7 +8,7 @@ export function JsonLd() {
         "@type": "Organization",
         "@id": `${siteConfig.url}/#organization`,
         name: "AgevoDev",
-        legalName: "Agevo",
+        legalName: "AgevoDev B.V.",
         url: siteConfig.url,
         logo: `${siteConfig.url}/logo.png`,
         image: `${siteConfig.url}/logo.png`,
@@ -41,7 +41,7 @@ export function JsonLd() {
         "@type": "WebSite",
         "@id": `${siteConfig.url}/#website`,
         url: siteConfig.url,
-        name: "Agevo",
+        name: "AgevoDev",
         description: siteConfig.description,
         publisher: {
           "@id": `${siteConfig.url}/#organization`,

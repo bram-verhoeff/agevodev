@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Agevo",
+  name: "AgevoDev",
   tagline: "Tech Studio & Venture Builder",
   description:
     "Agevo is een overkoepelend techbedrijf en development studio. Wij bouwen toonaangevende eigen SaaS-ventures én realiseren hoogwaardige maatwerk webapplicaties en slimme software voor bedrijven.",

@@ -24,7 +24,7 @@ export function Contact() {
     email: "",
     company: "",
     projectType: "SaaS & MVP Ontwikkeling",
-    budget: "€5.000 - €15.000",
+    budget: "€2.500 - €5.000",
     message: "",
   });
 
@@ -70,7 +70,7 @@ export function Contact() {
       email: "",
       company: "",
       projectType: "SaaS & MVP Ontwikkeling",
-      budget: "€5.000 - €15.000",
+      budget: "€2.500 - €5.000",
       message: "",
     });
     setErrors({});
@@ -289,10 +289,10 @@ export function Contact() {
                       </label>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                         {[
-                          "< €5.000",
-                          "€5.000 - €15.000",
-                          "€15.000 - €30.000",
-                          "€30.000+",
+                          "< €2.500",
+                          "€2.500 - €5.000",
+                          "€5.000 - €10.000",
+                          "€10.000+",
                         ].map((b) => (
                           <button
                             type="button"

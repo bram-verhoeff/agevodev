@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Agevo | Tech Studio & Venture Builder | Schaalbare Software & SaaS",
-    template: "%s | Agevo",
+    default: "AgevoDev | Tech Studio & Venture Builder | Schaalbare Software & SaaS",
+    template: "%s | AgevoDev",
   },
   description:
-    "Agevo is een overkoepelend techbedrijf en development studio. Wij bouwen toonaangevende eigen SaaS-ventures (zoals StudyElite.nl) én realiseren hoogwaardige maatwerk webapplicaties en slimme software voor bedrijven.",
+    "AgevoDev is een overkoepelend techbedrijf en development studio. Wij bouwen toonaangevende eigen SaaS-ventures (zoals StudyElite.nl) én realiseren hoogwaardige maatwerk webapplicaties en slimme software voor bedrijven.",
   keywords: [
     "Agevo",
     "Agevo Dev",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     "Supabase Partner",
     "Nederland Software Bureau",
   ],
-  authors: [{ name: "Agevo", url: siteConfig.url }],
-  creator: "Agevo",
-  publisher: "Agevo",
+  authors: [{ name: "AgevoDev", url: siteConfig.url }],
+  creator: "AgevoDev",
+  publisher: "AgevoDev",
   alternates: {
     canonical: "/",
   },
@@ -51,14 +51,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nl_NL",
     url: siteConfig.url,
-    title: "Agevo | Tech Studio & Venture Builder | Schaalbare Software & SaaS",
+    title: "AgevoDev | Tech Studio & Venture Builder | Schaalbare Software & SaaS",
     description:
       "Wij bouwen schaalbare webapps, slimme software en digitale platformen. Maker van o.a. StudyElite.nl en partner in high-end maatwerk software.",
-    siteName: "Agevo",
+    siteName: "AgevoDev",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agevo | Tech Studio & Venture Builder",
+    title: "AgevoDev | Tech Studio & Venture Builder",
     description:
       "Wij bouwen schaalbare webapps, slimme software en digitale platformen. Maker van o.a. StudyElite.nl.",
     creator: "@agevodev",
