@@ -20,8 +20,29 @@ export function Navbar() {
         setIsScrolled(false);
       }
     };
+
+    const handleHash = () => {
+      if (window.location.hash === "#agenda" || window.location.hash === "#afspraak") {
+        setIsModalOpen(true);
+      }
+    };
+
+    const handleOpenModal = () => {
+      setIsModalOpen(true);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", handleHash);
+    window.addEventListener("open-calendar-modal", handleOpenModal);
+
+    // Check initial hash on mount
+    handleHash();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHash);
+      window.removeEventListener("open-calendar-modal", handleOpenModal);
+    };
   }, []);
 
   return (

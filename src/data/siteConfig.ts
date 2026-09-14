@@ -6,6 +6,12 @@ export const siteConfig = {
   url: "https://agevodev.nl",
   email: "info@agevodev.nl",
   phone: "+31 (0)6 12 34 56 78",
+  /**
+   * Cal.com link of gebruikersnaam voor online kennismaking inplannen.
+   * Bijv: "agevo/15min"
+   * Kan ook worden overschreven via environment variable NEXT_PUBLIC_CAL_LINK
+   */
+  calLink: process.env.NEXT_PUBLIC_CAL_LINK || "agevo/15min",
   kvk: "42160840",
   location: "Nederland",
   city: "Nederland",

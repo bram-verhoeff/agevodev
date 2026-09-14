@@ -15,6 +15,8 @@ import {
   Building2,
   Phone,
   ArrowRight,
+  Calendar,
+  ArrowUpRight,
 } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -168,6 +170,29 @@ export function Contact() {
                   Momenteel capaciteit voor 1 nieuw maatwerktraject
                 </span>
               </div>
+            </div>
+
+            {/* Online Agenda Callout */}
+            <div className="p-6 rounded-3xl bg-gradient-to-br from-indigo-500/15 via-blue-500/10 to-transparent border border-indigo-500/30 space-y-3 relative overflow-hidden group">
+              <div className="flex items-center gap-2.5 text-indigo-300">
+                <div className="w-8 h-8 rounded-lg bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400">
+                  <Calendar className="w-4 h-4" />
+                </div>
+                <span className="text-sm font-semibold text-white">Direct een afspraak inplannen?</span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Kies direct een datum en tijdstip die jou het beste uitkomen voor een vrijblijvende online meeting via Cal.com.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  window.dispatchEvent(new CustomEvent("open-calendar-modal"));
+                }}
+                className="w-full mt-1 py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2 group-hover:shadow-indigo-600/50 cursor-pointer"
+              >
+                <span>Online agenda openen</span>
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
             </div>
 
             {/* Micro FAQ / Trust Badge */}

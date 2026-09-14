@@ -96,6 +96,14 @@ export function Footer() {
                   Contact &amp; Aanvraag
                 </a>
               </li>
+              <li>
+                <a href="#agenda" className="hover:text-indigo-300 text-indigo-400/90 transition-colors flex items-center gap-1.5">
+                  <span>Gesprek Inplannen</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                    Agenda
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
 
