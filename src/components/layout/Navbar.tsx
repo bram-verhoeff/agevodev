@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowUpRight, Calendar } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { MeetingModal } from "@/components/ui/MeetingModal";
 
@@ -90,7 +90,7 @@ export function Navbar() {
               className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs lg:text-sm font-semibold rounded-full group bg-gradient-to-br from-indigo-500 via-blue-500 to-indigo-600 group-hover:from-indigo-600 group-hover:to-blue-600 hover:text-white text-white shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all duration-300"
             >
               <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-[#0a0d18] rounded-full group-hover:bg-opacity-0 flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-indigo-400 group-hover:text-white transition-colors" />
+                <Calendar className="w-3.5 h-3.5 text-indigo-400 group-hover:text-white transition-colors" />
                 <span>Kennismaking plannen</span>
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </span>

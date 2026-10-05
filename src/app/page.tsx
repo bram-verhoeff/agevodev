@@ -1,10 +1,12 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { Ventures } from "@/components/sections/Ventures";
 import { Services } from "@/components/sections/Services";
+import { Ventures } from "@/components/sections/Ventures";
 import { About } from "@/components/sections/About";
+import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -12,12 +14,14 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <Ventures />
         <Services />
+        <Ventures />
         <About />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

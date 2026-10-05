@@ -16,7 +16,8 @@ export function JsonLd() {
         description: siteConfig.description,
         sameAs: [
           siteConfig.socials.instagram,
-          siteConfig.socials.github,
+          siteConfig.socials.linkedinCompany,
+          siteConfig.socials.linkedinPersonal,
         ],
         contactPoint: {
           "@type": "ContactPoint",

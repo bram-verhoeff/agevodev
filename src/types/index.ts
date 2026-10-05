@@ -10,7 +10,7 @@ export interface Venture {
   tagline: string;
   description: string;
   longDescription: string;
-  status: "Live Product" | "In Development" | "Beta";
+  status: "Live Product" | "In Development" | "Beta" | "Live Voorbeeld";
   url: string;
   externalUrl?: string;
   featured: boolean;

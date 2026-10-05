@@ -60,10 +60,10 @@ export default function PrivacyPage() {
                 1. Inleiding &amp; Bedrijfsgegevens
               </h2>
               <p>
-                Agevo (hierna &quot;wij&quot;, &quot;ons&quot; of &quot;Agevo&quot;) hecht grote waarde aan de bescherming van jouw persoonsgegevens en jouw privacy. In deze privacyverklaring leggen we transparant uit welke gegevens we verzamelen, waarom we dat doen, hoe lang we deze bewaren en welke rechten je hebt onder de Algemene Verordening Gegevensbescherming (AVG).
+                Agevo (hierna &quot;ik&quot;, &quot;Agevo&quot; of &quot;AgevoDev&quot;) hecht grote waarde aan de bescherming van jouw persoonsgegevens en jouw privacy. In deze privacyverklaring leg ik transparant uit welke gegevens worden verzameld, waarom ik dat doe, hoe lang deze worden bewaard en welke rechten je hebt onder de Algemene Verordening Gegevensbescherming (AVG).
               </p>
               <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1 text-xs">
-                <p><strong className="text-white">Onderneming:</strong> Agevo</p>
+                <p><strong className="text-white">Onderneming:</strong> Agevo (Bram Verhoeff)</p>
                 <p><strong className="text-white">KvK-nummer:</strong> {siteConfig.kvk}</p>
                 <p><strong className="text-white">E-mailadres:</strong> {siteConfig.email}</p>
                 <p><strong className="text-white">Locatie:</strong> {siteConfig.location}</p>
@@ -74,10 +74,10 @@ export default function PrivacyPage() {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
                 <Eye className="w-5 h-5 text-blue-400" />
-                2. Welke gegevens verzamelen wij?
+                2. Welke gegevens verzamel ik?
               </h2>
               <p>
-                Wanneer je contact met ons opneemt of gebruikmaakt van onze diensten, kunnen wij de volgende persoonsgegevens verwerken die je zelf actief aan ons verstrekt:
+                Wanneer je contact met mij opneemt of gebruikmaakt van mijn diensten, kunnen de volgende persoonsgegevens worden verwerkt die je zelf actief aan mij verstrekt:
               </p>
               <ul className="list-disc list-inside space-y-1 pl-2 text-slate-400">
                 <li>Voor- en achternaam</li>
@@ -94,22 +94,22 @@ export default function PrivacyPage() {
                 <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                 3. Doeleinden en grondslag van de verwerking
               </h2>
-              <p>Wij verwerken deze persoonsgegevens uitsluitend voor:</p>
+              <p>Ik verwerk deze persoonsgegevens uitsluitend voor:</p>
               <ul className="list-disc list-inside space-y-1 pl-2 text-slate-400">
-                <li>Het beantwoorden van je vraag of kennismakingsverzoek via onze website.</li>
+                <li>Het beantwoorden van je vraag of kennismakingsverzoek via mijn website.</li>
                 <li>Het voorbereiden en uitbrengen van een offerte op maat.</li>
                 <li>De uitvoering van een overeenkomst tot software- en webdevelopment.</li>
                 <li>Het voldoen aan wettelijke administratieve verplichtingen (zoals de fiscale bewaarplicht).</li>
               </ul>
               <p className="text-xs text-slate-400">
-                Grondslag: De verwerking is noodzakelijk voor de behartiging van onze gerechtvaardigde belangen (communicatie met geïnteresseerden) of ter voorbereiding/uitvoering van een overeenkomst.
+                Grondslag: De verwerking is noodzakelijk voor de behartiging van mijn gerechtvaardigde belangen (communicatie met geïnteresseerden) of ter voorbereiding/uitvoering van een overeenkomst.
               </p>
             </section>
 
             {/* Bewaartermijn */}
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white tracking-tight">
-                4. Hoe lang bewaren we je gegevens?
+                4. Hoe lang bewaar ik je gegevens?
               </h2>
               <p>
                 Agevo bewaart je persoonsgegevens niet langer dan strikt noodzakelijk is om de doelen te realiseren waarvoor je gegevens worden verzameld. Gegevens van contactaanvragen die niet tot een opdracht leiden, worden binnen 12 maanden na het laatste contactmoment verwijderd. Factuur- en administratiegegevens worden bewaard conform de wettelijke termijn van 7 jaar.
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
                 5. Delen van gegevens met derden
               </h2>
               <p>
-                Wij verkopen jouw gegevens <strong>nooit</strong> aan derden. Wij delen persoonsgegevens uitsluitend met betrouwbare verwerkers indien dit noodzakelijk is voor onze bedrijfsvoering (zoals onze beveiligde cloudhosting provider Vercel en e-mailproviders). Met deze partijen zijn verwerkersovereenkomsten gesloten die voldoen aan de AVG-eisen. Data wordt opgeslagen binnen de Europese Economische Ruimte (EER) of onder adequate waarborgen (EU Standard Contractual Clauses).
+                Ik verkoop jouw gegevens <strong>nooit</strong> aan derden. Ik deel persoonsgegevens uitsluitend met betrouwbare verwerkers indien dit noodzakelijk is voor de bedrijfsvoering (zoals de beveiligde cloudhosting provider Vercel en e-mailproviders). Met deze partijen zijn verwerkersovereenkomsten gesloten die voldoen aan de AVG-eisen. Data wordt opgeslagen binnen de Europese Economische Ruimte (EER) of onder adequate waarborgen (EU Standard Contractual Clauses).
               </p>
             </section>
 
@@ -133,7 +133,7 @@ export default function PrivacyPage() {
                 6. Cookies en tracking
               </h2>
               <p>
-                Onze website maakt <strong>géén</strong> gebruik van tracking cookies, advertentienetwerken (zoals Meta Pixel of Google Ads remarketing) of privacy-inbreukmakende profilering. Wij gebruiken uitsluitend functionele technieken die noodzakelijk zijn voor een veilige en soepele werking van de website.
+                Mijn website maakt <strong>géén</strong> gebruik van tracking cookies, advertentienetwerken (zoals Meta Pixel of Google Ads remarketing) of privacy-inbreukmakende profilering. Ik gebruik uitsluitend functionele technieken die noodzakelijk zijn voor een veilige en soepele werking van de website.
               </p>
             </section>
 
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
                 7. Beveiliging van gegevens
               </h2>
               <p>
-                Agevo neemt passende technische en organisatorische maatregelen om misbruik, verlies, onbevoegde toegang en ongewenste openbaarmaking tegen te gaan. Onze website en API-verbindingen maken gebruik van sterke TLS/SSL-versleuteling (HTTPS).
+                Agevo neemt passende technische en organisatorische maatregelen om misbruik, verlies, onbevoegde toegang en ongewenste openbaarmaking tegen te gaan. De website en API-verbindingen maken gebruik van sterke TLS/SSL-versleuteling (HTTPS).
               </p>
             </section>
 
@@ -168,7 +168,7 @@ export default function PrivacyPage() {
                 >
                   {siteConfig.email}
                 </a>
-                . We reageren binnen vier weken op je verzoek. Mocht je niet tevreden zijn over de afhandeling, dan heb je het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens.
+                . Ik reageer binnen vier weken op je verzoek. Mocht je niet tevreden zijn over de afhandeling, dan heb je het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens.
               </p>
             </section>
           </div>
@@ -181,7 +181,7 @@ export default function PrivacyPage() {
                 Vragen over je privacy?
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                Neem direct contact op via {siteConfig.email}. We helpen je graag verder.
+                Neem direct contact op via {siteConfig.email}. Ik help je graag verder.
               </p>
             </div>
             <a

@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/siteConfig";
 export const metadata: Metadata = {
   title: "Maatwerk Software Ontwikkeling | Next.js Specialist",
   description:
-    "Laat schaalbare maatwerk software ontwikkelen door AgevoDev. Wij bouwen razendsnelle webapplicaties met Next.js, React en TypeScript voor de ultieme gebruikerservaring.",
+    "Laat schaalbare maatwerk software ontwikkelen door Bram Verhoeff. Ik bouw razendsnelle webapplicaties met Next.js, React en TypeScript voor de ultieme gebruikerservaring.",
 };
 
 export default function MaatwerkSoftwarePage() {
@@ -23,13 +23,13 @@ export default function MaatwerkSoftwarePage() {
           </Link>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-xs font-semibold text-indigo-300 uppercase tracking-wider mb-4">
             <Code2 className="w-4 h-4" />
-            Onze Core Dienst
+            Mijn Core Dienst
           </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
             Maatwerk Software <span className="glow-indigo-text">Ontwikkeling</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl">
-            Als je een webplatform of applicatie nodig hebt die perfect moet aansluiten bij jouw bedrijfsprocessen, dan is standaard software vaak niet voldoende. Wij ontwerpen en bouwen <strong>high-end maatwerk software</strong> met de nieuwste webtechnologieën.
+            Als je een webplatform of applicatie nodig hebt die perfect moet aansluiten bij jouw bedrijfsprocessen, dan is standaard software vaak niet voldoende. Ik ontwerp en bouw <strong>high-end maatwerk software</strong> met de nieuwste webtechnologieën.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function MaatwerkSoftwarePage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
             <h2 className="text-2xl font-bold text-white mb-4">Waarom Maatwerk?</h2>
             <p className="text-slate-300 leading-relaxed mb-6">
-              Maatwerk software (custom development) geeft je de vrijheid om jouw bedrijfslogica exact te vertalen naar een digitaal product. Geen compromissen, geen trage templates, en geen onnodige code die je platform vertraagt. Wij bouwen alles <em>from scratch</em> met Next.js 14+ (App Router).
+              Maatwerk software (custom development) geeft je de vrijheid om jouw bedrijfslogica exact te vertalen naar een digitaal product. Geen compromissen, geen trage templates, en geen onnodige code die je platform vertraagt. Ik bouw alles <em>from scratch</em> met Next.js 14+ (App Router).
             </p>
             <ul className="grid sm:grid-cols-2 gap-4">
               {[
@@ -57,7 +57,7 @@ export default function MaatwerkSoftwarePage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-6">Onze Tech Stack</h2>
+            <h2 className="text-2xl font-bold text-white mb-6">Mijn Tech Stack</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 flex flex-col gap-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
@@ -89,7 +89,7 @@ export default function MaatwerkSoftwarePage() {
           <div className="mt-16 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Start met jouw maatwerk applicatie</h2>
             <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
-              Klaar om je idee om te zetten in een digitaal platform? Wij helpen je van de eerste architectuur schets tot de livegang in productie.
+              Klaar om je idee om te zetten in een digitaal platform? Ik help je van de eerste architectuurschets tot de livegang in productie.
             </p>
             <Link
               href="/#contact"

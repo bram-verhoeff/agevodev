@@ -278,10 +278,10 @@ export function MeetingModal({
                     <div>
                       <div className="mb-5 text-center sm:text-left">
                         <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1.5">
-                          Stuur ons een bericht
+                          Stuur mij een bericht
                         </h3>
                         <p className="text-xs sm:text-sm text-slate-400">
-                          Heb je een vraag, specifiek project of wil je eerst per mail schakelen? Laat een bericht achter en we reageren binnen 24 uur.
+                          Heb je een vraag, specifiek project of wil je eerst per mail schakelen? Laat een bericht achter en ik reageer binnen 24 uur.
                         </p>
                       </div>
 
@@ -373,7 +373,7 @@ export function MeetingModal({
                             onChange={(e) =>
                               setFormData({ ...formData, message: e.target.value })
                             }
-                            placeholder="Beschrijf in het kort waar we je mee kunnen helpen..."
+                            placeholder="Beschrijf in het kort waar ik je mee kan helpen..."
                             className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none"
                           />
                         </div>
@@ -414,7 +414,7 @@ export function MeetingModal({
                         Bedankt voor je bericht!
                       </h3>
                       <p className="text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
-                        We hebben je gegevens ontvangen. Een van onze tech leads neemt binnen 24 uur contact met je op via{" "}
+                        Ik heb je gegevens ontvangen. Ik neem binnen 24 uur persoonlijk contact met je op via{" "}
                         <span className="text-indigo-300 font-medium">
                           {formData.email}
                         </span>

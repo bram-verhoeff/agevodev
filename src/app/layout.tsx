@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "AgevoDev | Tech Studio & Venture Builder | Schaalbare Software & SaaS",
+    default: "AgevoDev | Websites & Software Laten Maken | Zonder Technisch Gedoe",
     template: "%s | AgevoDev",
   },
   description:
-    "AgevoDev is een overkoepelend techbedrijf en development studio. Wij bouwen toonaangevende eigen SaaS-ventures (zoals StudyElite.nl) én realiseren hoogwaardige maatwerk webapplicaties en slimme software voor bedrijven.",
+    "Ik bouw complete websites, webshops en online applicaties voor ondernemers. Zonder technisch gedoe, razendsnel geleverd en klaar om klanten te trekken.",
   keywords: [
     "Agevo",
     "Agevo Dev",
@@ -51,16 +51,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nl_NL",
     url: siteConfig.url,
-    title: "AgevoDev | Tech Studio & Venture Builder | Schaalbare Software & SaaS",
+    title: "AgevoDev | Websites & Software Laten Maken | Zonder Technisch Gedoe",
     description:
-      "Wij bouwen schaalbare webapps, slimme software en digitale platformen. Maker van o.a. StudyElite.nl en partner in high-end maatwerk software.",
+      "Ik bouw, lanceer en onderhoud complete websites, webshops en online platformen voor ondernemers. Maker van o.a. StudyElite.nl.",
     siteName: "AgevoDev",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AgevoDev | Tech Studio & Venture Builder",
+    title: "AgevoDev | Websites & Software Laten Maken",
     description:
-      "Wij bouwen schaalbare webapps, slimme software en digitale platformen. Maker van o.a. StudyElite.nl.",
+      "Ik bouw, lanceer en onderhoud complete websites, webshops en online platformen voor ondernemers. Maker van o.a. StudyElite.nl.",
     creator: "@agevodev",
   },
   robots: {

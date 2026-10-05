@@ -200,10 +200,10 @@ export default function VoorwaardenPage() {
             <div>
               <div className="text-sm font-bold text-white flex items-center gap-2">
                 <Mail className="w-4 h-4 text-blue-400" />
-                Vragen over onze voorwaarden of een custom NDA?
+                Vragen over de voorwaarden of een custom NDA?
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                Wij voorzien desgewenst in een wederzijdse geheimhoudingsovereenkomst (NDA) voorafgaand aan je project.
+                Ik voorzie desgewenst in een wederzijdse geheimhoudingsovereenkomst (NDA) voorafgaand aan je project.
               </p>
             </div>
             <a

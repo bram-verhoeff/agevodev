@@ -8,7 +8,7 @@ export const ventures: Venture[] = [
     description:
       "Het innovatieve studieplatform dat studenten en professionals ondersteunt met geautomatiseerde, dynamische studieroosters, actieve herhalingsmethodes en realtime AI-studiebegeleiding.",
     longDescription:
-      "StudyElite is ontstaan vanuit de visie dat studeren slimmer, overzichtelijker en stressvrijer kan. Door geavanceerde AI-algoritmen te combineren met beproefde leermethodologieën (zoals spaced repetition en actieve recall), helpt StudyElite studenten om hun tentamens met vertrouwen te halen. Als vlaggenschip venture onder Agevo bewijst StudyElite onze kracht in productontwikkeling, schaalbare cloud architectuur en conversiegerichte UX.",
+      "StudyElite is ontstaan vanuit de visie dat studeren slimmer, overzichtelijker en stressvrijer kan. Door geavanceerde AI-algoritmen te combineren met beproefde leermethodologieën (zoals spaced repetition en actieve recall), helpt StudyElite studenten om hun tentamens met vertrouwen te halen. Als vlaggenschip venture bewijst StudyElite mijn kracht in productontwikkeling, schaalbare cloud architectuur en conversiegerichte UX.",
     status: "Live Product",
     url: "https://studyelite.nl",
     externalUrl: "https://studyelite.nl",
@@ -52,9 +52,9 @@ export const ventures: Venture[] = [
     name: "Agevo Labs",
     tagline: "R&D en incubatie van experimentele micro-SaaS producten",
     description:
-      "Onze interne broedplaats waar we voortdurend nieuwe technologieën, AI-agents en micro-SaaS concepten prototypen en valideren.",
+      "Mijn interne broedplaats waar ik voortdurend nieuwe technologieën, AI-agents en micro-SaaS concepten prototype en valideer.",
     longDescription:
-      "Bij Agevo stopt innovatie nooit. Binnen Agevo Labs onderzoeken we de grenzen van LLM-agent architecturen, autonome backend workflows en niche developer tools. De beste prototypes groeien uit tot zelfstandige ventures.",
+      "Innovatie stopt nooit. Binnen Agevo Labs onderzoek ik de grenzen van moderne AI, autonome backend workflows en niche developer tools. De beste prototypes groeien uit tot zelfstandige software.",
     status: "In Development",
     url: "#contact",
     featured: false,
@@ -73,6 +73,46 @@ export const ventures: Venture[] = [
       {
         title: "Micro-SaaS Incubator",
         description: "Snelle marktvalidatie van schaalbare nicheoplossingen binnen 4 weken.",
+      },
+    ],
+    badgeColor: "indigo",
+  },
+  {
+    id: "bramverhoeff",
+    name: "Bram Verhoeff Portfolio",
+    tagline: "Live voorbeeld van mijn Portfolio Website (€30,-)",
+    description:
+      "Een strakke, moderne en razendsnelle portfolio website om projecten, vaardigheden en werkervaring professioneel te presenteren. Live te bekijken op bramverhoeff.nl.",
+    longDescription:
+      "Het levende bewijs van mijn Portfolio Website van €30,-. Minimalistisch, vlijmscherp op mobiel en ontworpen om direct indruk te maken op potentiële klanten of werkgevers.",
+    status: "Live Voorbeeld",
+    url: "https://bramverhoeff.nl",
+    externalUrl: "https://bramverhoeff.nl",
+    featured: true,
+    category: "Portfolio Website (€30,-)",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel Edge",
+    ],
+    metrics: [
+      { label: "Vaste Prijs", value: "Slechts €30,-" },
+      { label: "Doorlooptijd", value: "24-48 Uur" },
+      { label: "Live website", value: "bramverhoeff.nl" },
+    ],
+    features: [
+      {
+        title: "Projecten & Ervaring Showcase",
+        description: "Al jouw gerealiseerde werk, opleidingen en vaardigheden overzichtelijk gerangschikt.",
+      },
+      {
+        title: "Directe Contactknoppen",
+        description: "Snelle links naar LinkedIn, e-mail en WhatsApp zodat men direct met je in contact komt.",
+      },
+      {
+        title: "100% Mobielvriendelijk & Razendsnel",
+        description: "Opent binnen een oogwenk op elk scherm en straalt direct betrouwbaarheid uit.",
       },
     ],
     badgeColor: "indigo",

@@ -4,26 +4,26 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Code2,
-  Terminal,
-  Cpu,
-  Zap,
   CheckCircle2,
-  ExternalLink,
-  Sparkles,
-  Server,
-  Globe2,
+  Smile,
+  Zap,
+  Smartphone,
+  Search,
+  HeartHandshake,
+  Layout,
+  Globe,
+  ShieldCheck,
 } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
 export function Hero() {
-  const [activeTab, setActiveTab] = useState<"arch" | "code" | "metrics">("arch");
+  const [activeTab, setActiveTab] = useState<"result" | "service" | "proof">("result");
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center justify-center bg-grid-pattern">
+    <section className="relative min-h-[92vh] pt-32 pb-20 overflow-hidden flex items-center justify-center bg-grid-pattern">
       {/* Ambient background glow orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[400px] bg-gradient-to-tr from-indigo-600/20 via-blue-500/15 to-purple-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/3 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[850px] h-[450px] bg-gradient-to-tr from-indigo-600/20 via-blue-500/15 to-purple-600/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute top-1/2 right-10 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -33,16 +33,16 @@ export function Hero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-xs font-medium text-indigo-300 shadow-sm shadow-indigo-500/10 backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs sm:text-sm font-medium text-slate-300 shadow-sm backdrop-blur-md"
           >
             <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            <span>Tech Studio & Venture Builder</span>
+            <span className="font-semibold text-white">Geen technisch gedoe</span>
             <span className="text-slate-500">|</span>
-            <span className="text-slate-300 flex items-center gap-1">
-              Maker van <strong className="text-white font-semibold">StudyElite.nl</strong>
+            <span className="text-slate-300">
+              Websites &amp; webshops die <strong className="text-white font-semibold">nieuwe klanten opleveren</strong>
             </span>
           </motion.div>
 
@@ -51,26 +51,20 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
+            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15]"
           >
-            Wij bouwen schaalbare{" "}
-            <span className="glow-indigo-text">webapps</span>, slimme{" "}
-            <span className="glow-indigo-text">software</span> & digitale{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-white">
-              platformen.
-            </span>
+            Een professionele website laten maken{" "}
+            <span className="glow-indigo-text">voor jouw bedrijf.</span>
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Simple, friendly Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed"
           >
-            Agevo is een overkoepelende development studio. Wij lanceren toonaangevende eigen{" "}
-            <span className="text-indigo-300 font-medium">SaaS-ventures</span> én ontwikkelen hoogwaardige{" "}
-            <span className="text-white font-medium">maatwerk software</span> voor ambitieuze organisaties.
+            Zonder ingewikkelde vaktermen of lange wachttijden. Ik ontwerp, bouw en beheer jouw complete website of webshop — snel, overzichtelijk en direct klaar voor resultaat.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -81,219 +75,222 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center gap-4 pt-2 w-full sm:w-auto"
           >
             <a
-              href="#ventures"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 via-indigo-600 to-blue-600 text-white font-semibold text-sm shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group"
+              href="#contact"
+              className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm sm:text-base shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2.5 group"
             >
-              <span>Bekijk Portfolio & Ventures</span>
+              <span>Vrijblijvende Offerte Aanvragen</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
             <a
-              href="#contact"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-semibold text-sm backdrop-blur-md hover:border-white/20 transition-all duration-200 flex items-center justify-center gap-2"
+              href="#diensten"
+              className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-semibold text-sm sm:text-base backdrop-blur-md hover:border-white/20 transition-all duration-200 flex items-center justify-center gap-2"
             >
-              <span>Contact Opnemen</span>
+              <span>Wat ik voor jou bouw</span>
             </a>
           </motion.div>
 
-          {/* Trust Highlights */}
+          {/* Trust Highlights for non-technical visitors */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 pt-6 w-full border-t border-white/10"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-6 w-full border-t border-white/10"
           >
-            {siteConfig.stats.map((stat) => (
-              <div key={stat.label} className="text-left px-2 sm:px-4">
-                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-baseline gap-1">
-                  {stat.value}
-                </div>
-                <div className="text-xs sm:text-sm font-medium text-indigo-300 mt-0.5">
-                  {stat.label}
-                </div>
-                <div className="text-[11px] text-slate-400 mt-0.5 hidden sm:block">
-                  {stat.detail}
-                </div>
+            <div className="text-left p-3 rounded-xl bg-white/[0.02]">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
+                <Smile className="w-6 h-6 text-indigo-400" />
+                100%
               </div>
-            ))}
+              <div className="text-xs sm:text-sm font-semibold text-indigo-300 mt-1">
+                Zonder Technisch Gedoe
+              </div>
+              <div className="text-[11px] text-slate-400 mt-0.5">
+                Ik regel alles van A tot Z
+              </div>
+            </div>
+
+            <div className="text-left p-3 rounded-xl bg-white/[0.02]">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
+                <Zap className="w-6 h-6 text-emerald-400" />
+                1-2 Weken
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-emerald-300 mt-1">
+                Snel Online
+              </div>
+              <div className="text-[11px] text-slate-400 mt-0.5">
+                Geen maandenlange wachttijden
+              </div>
+            </div>
+
+            <div className="text-left p-3 rounded-xl bg-white/[0.02]">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
+                <Search className="w-6 h-6 text-blue-400" />
+                Google
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-blue-300 mt-1">
+                Direct Goed Vindbaar
+              </div>
+              <div className="text-[11px] text-slate-400 mt-0.5">
+                Geoptimaliseerd voor lokale klanten
+              </div>
+            </div>
+
+            <div className="text-left p-3 rounded-xl bg-white/[0.02]">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
+                <HeartHandshake className="w-6 h-6 text-purple-400" />
+                Persoonlijk
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-purple-300 mt-1">
+                Direct Contact
+              </div>
+              <div className="text-[11px] text-slate-400 mt-0.5">
+                Gewoon bellen met de bouwer
+              </div>
+            </div>
           </motion.div>
         </div>
 
-        {/* Interactive Studio Preview Card / Architecture visual */}
+        {/* Visual Showcase Card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 max-w-5xl mx-auto"
+          className="mt-14 max-w-5xl mx-auto"
         >
-          <div className="relative rounded-2xl glass-panel p-1 border border-white/15 shadow-2xl overflow-hidden group">
+          <div className="relative rounded-3xl glass-panel p-1 border border-white/15 shadow-2xl overflow-hidden group">
             {/* Header bar */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-[#080c18]/90">
+            <div className="flex flex-col sm:flex-row items-center justify-between px-5 py-3.5 border-b border-white/10 bg-[#080c18]/90 gap-3">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80" />
                 <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="text-xs font-mono text-slate-400 ml-2 hidden sm:inline">
-                  agevodev-engine v2.4 (Software Development)
+                <span className="text-xs font-medium text-slate-300 ml-2">
+                  Wat ik voor jou doe:
                 </span>
               </div>
 
               {/* Tabs */}
-              <div className="flex items-center bg-black/40 rounded-lg p-1 border border-white/10 text-xs">
+              <div className="flex items-center bg-black/40 rounded-xl p-1 border border-white/10 text-xs">
                 <button
-                  onClick={() => setActiveTab("arch")}
-                  className={`px-3 py-1 rounded-md transition-all ${
-                    activeTab === "arch"
+                  onClick={() => setActiveTab("result")}
+                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+                    activeTab === "result"
                       ? "bg-indigo-600 text-white font-medium shadow"
                       : "text-slate-400 hover:text-white"
                   }`}
                 >
-                  Architectuur
+                  Wat Jij Krijgt
                 </button>
                 <button
-                  onClick={() => setActiveTab("code")}
-                  className={`px-3 py-1 rounded-md transition-all ${
-                    activeTab === "code"
+                  onClick={() => setActiveTab("service")}
+                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+                    activeTab === "service"
                       ? "bg-indigo-600 text-white font-medium shadow"
                       : "text-slate-400 hover:text-white"
                   }`}
                 >
-                  Tech Stack
+                  Zonder Zorgen
                 </button>
                 <button
-                  onClick={() => setActiveTab("metrics")}
-                  className={`px-3 py-1 rounded-md transition-all ${
-                    activeTab === "metrics"
+                  onClick={() => setActiveTab("proof")}
+                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+                    activeTab === "proof"
                       ? "bg-indigo-600 text-white font-medium shadow"
                       : "text-slate-400 hover:text-white"
                   }`}
                 >
-                  Live Status
+                  Mijn Ervaring
                 </button>
               </div>
             </div>
 
             {/* Tab Body */}
-            <div className="p-5 sm:p-7 bg-[#070a14]/90 min-h-[220px]">
-              {activeTab === "arch" && (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="rounded-xl bg-white/[0.03] border border-white/10 p-4 space-y-2">
-                    <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-2">
-                      <Globe2 className="w-4 h-4" />
+            <div className="p-6 sm:p-8 bg-[#070a14]/90 min-h-[220px]">
+              {activeTab === "result" && (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                  <div className="rounded-2xl bg-white/[0.03] border border-white/10 p-5 space-y-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                      <Layout className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-semibold text-white">Client & Edge Layer</div>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      Next.js 16 App Router, React 19, Server Actions, edge caching en globale CDN distributie.
+                    <div className="text-sm font-bold text-white">Prachtig Modern Design</div>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Jouw bedrijf straalt direct betrouwbaarheid en professionaliteit uit. Bezoekers zien meteen waarom ze voor jou moeten kiezen.
                     </p>
-                    <div className="pt-2 flex flex-wrap gap-1">
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 font-mono">
-                        Sub-100ms TTFB
-                      </span>
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 font-mono">
-                        99.98% SLA
-                      </span>
-                    </div>
                   </div>
 
-                  <div className="rounded-xl bg-white/[0.03] border border-white/10 p-4 space-y-2">
-                    <div className="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-2">
-                      <Cpu className="w-4 h-4" />
+                  <div className="rounded-2xl bg-white/[0.03] border border-white/10 p-5 space-y-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                      <Smartphone className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-semibold text-white">AI & Logic Core</div>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      LLM orchestration (OpenAI/Anthropic), vector embeddings, background workers en automatiseringsstromen.
+                    <div className="text-sm font-bold text-white">Perfect op Mobiel &amp; Tablet</div>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Meer dan 70% van je bezoekers kijkt op een telefoon. Jouw site werkt vlekkeloos en laadt binnen een oogwenk op elk scherm.
                     </p>
-                    <div className="pt-2 flex flex-wrap gap-1">
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 font-mono">
-                        Async Queues
-                      </span>
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 font-mono">
-                        AI Agents
-                      </span>
-                    </div>
                   </div>
 
-                  <div className="rounded-xl bg-white/[0.03] border border-white/10 p-4 space-y-2">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2">
-                      <Server className="w-4 h-4" />
+                  <div className="rounded-2xl bg-white/[0.03] border border-white/10 p-5 space-y-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                      <CheckCircle2 className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-semibold text-white">Data & Multi-Tenant</div>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      PostgreSQL, Supabase, geautomatiseerde backups, row-level security (RLS) en veilige Stripe / Mollie billing.
+                    <div className="text-sm font-bold text-white">Meer Aanvragen &amp; Klanten</div>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Duidelijke belknoppen, simpele formulieren en opties voor online betalingen (iDEAL). Alles gericht op resultaat.
                     </p>
-                    <div className="pt-2 flex flex-wrap gap-1">
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 font-mono">
-                        Encrypted
-                      </span>
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 font-mono">
-                        Scalable SQL
-                      </span>
-                    </div>
                   </div>
                 </div>
               )}
 
-              {activeTab === "code" && (
-                <div className="font-mono text-xs text-slate-300 space-y-1.5 overflow-x-auto p-2 bg-black/40 rounded-xl border border-white/10">
-                  <div className="text-slate-500">// Modern Next.js App Router Architecture @ Agevo</div>
-                  <div>
-                    <span className="text-purple-400">import</span> &#123;{" "}
-                    <span className="text-yellow-300">AgevoStudio</span>,{" "}
-                    <span className="text-yellow-300">StudyEliteEngine</span> &#125;{" "}
-                    <span className="text-purple-400">from</span>{" "}
-                    <span className="text-emerald-400">&quot;@agevo/core&quot;</span>;
+              {activeTab === "service" && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                    <div className="text-xs font-semibold text-emerald-400">✓ Hosting &amp; Domein</div>
+                    <p className="text-xs text-slate-300 mt-1">
+                      Ik regel je webadres (.nl) en zorg dat je site 24/7 online en veilig blijft.
+                    </p>
                   </div>
-                  <div className="pt-1">
-                    <span className="text-indigo-400">export async function</span>{" "}
-                    <span className="text-blue-400">launchDigitalProduct</span>(
-                    <span className="text-orange-300">clientBrief</span>) &#123;
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                    <div className="text-xs font-semibold text-indigo-400">✓ Beveiliging &amp; Backups</div>
+                    <p className="text-xs text-slate-300 mt-1">
+                      Automatisch beschermd tegen hackers met groen SSL-slotje en dagelijkse backups.
+                    </p>
                   </div>
-                  <div className="pl-4">
-                    <span className="text-purple-400">const</span> product ={" "}
-                    <span className="text-indigo-400">await</span> AgevoStudio.build(&#123;
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                    <div className="text-xs font-semibold text-purple-400">✓ Ondersteuning</div>
+                    <p className="text-xs text-slate-300 mt-1">
+                      Wil je later een tekst, foto of openingstijd aanpassen? Eén appje naar mij en ik regel het direct.
+                    </p>
                   </div>
-                  <div className="pl-8 text-slate-400">
-                    framework: <span className="text-emerald-300">&quot;Next.js App Router &amp; TypeScript&quot;</span>,
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                    <div className="text-xs font-semibold text-cyan-400">✓ 100% Jouw Eigendom</div>
+                    <p className="text-xs text-slate-300 mt-1">
+                      Geen verborgen abonnementen of wurgcontracten. De website is en blijft helemaal van jou.
+                    </p>
                   </div>
-                  <div className="pl-8 text-slate-400">
-                    scalability: <span className="text-emerald-300">&quot;High-concurrency cloud ready&quot;</span>,
-                  </div>
-                  <div className="pl-8 text-slate-400">
-                    aiEngine: <span className="text-emerald-300">&quot;Integrated LLM / Vector Workflows&quot;</span>,
-                  </div>
-                  <div className="pl-8 text-slate-400">
-                    designSystem: <span className="text-emerald-300">&quot;Custom Tailwind &amp; Framer Motion&quot;</span>
-                  </div>
-                  <div className="pl-4">&#125;);</div>
-                  <div className="pl-4">
-                    <span className="text-purple-400">return</span> product.deployToProduction();
-                  </div>
-                  <div>&#125;</div>
                 </div>
               )}
 
-              {activeTab === "metrics" && (
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
-                    <div className="text-[11px] text-slate-400">Core Web Vitals</div>
-                    <div className="text-xl font-bold text-emerald-400 mt-1">100 / 100</div>
-                    <div className="text-[10px] text-slate-500 mt-0.5">Lighthouse Score</div>
+              {activeTab === "proof" && (
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-2">
+                  <div className="space-y-2 max-w-xl text-left">
+                    <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                      Zelf bewezen in de praktijk
+                    </span>
+                    <h4 className="text-lg font-bold text-white">
+                      Maker van onder andere StudyElite.nl
+                    </h4>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      Ik ben geen theoretisch adviseur. Ik heb zelf succesvolle online platformen opgericht die dagelijks honderden actieve gebruikers helpen. Diezelfde passie en kwaliteit stop ik in jouw website!
+                    </p>
                   </div>
-                  <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
-                    <div className="text-[11px] text-slate-400">StudyElite.nl</div>
-                    <div className="text-xl font-bold text-blue-400 mt-1">Live &amp; Actief</div>
-                    <div className="text-[10px] text-slate-500 mt-0.5">SaaS Venture Label</div>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
-                    <div className="text-[11px] text-slate-400">Avg. Response Time</div>
-                    <div className="text-xl font-bold text-indigo-400 mt-1">28 ms</div>
-                    <div className="text-[10px] text-slate-500 mt-0.5">Vercel Edge Network</div>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
-                    <div className="text-[11px] text-slate-400">Beschikbaarheid</div>
-                    <div className="text-xl font-bold text-white mt-1">Direct</div>
-                    <div className="text-[10px] text-emerald-400 mt-0.5">Open voor nieuwe projecten</div>
-                  </div>
+
+                  <a
+                    href="#portfolio"
+                    className="shrink-0 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold border border-white/10 flex items-center gap-1.5"
+                  >
+                    <span>Bekijk StudyElite</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               )}
             </div>

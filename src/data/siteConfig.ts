@@ -1,11 +1,17 @@
+import { NavItem } from "@/types";
+
 export const siteConfig = {
   name: "AgevoDev",
-  tagline: "Tech Studio & Venture Builder",
+  founder: "Bram Verhoeff",
+  tagline: "Websites & Software die Werken voor Ondernemers",
   description:
-    "Agevo is een overkoepelend techbedrijf en development studio. Wij bouwen toonaangevende eigen SaaS-ventures én realiseren hoogwaardige maatwerk webapplicaties en slimme software voor bedrijven.",
+    "Ik bouw complete websites, webshops en online applicaties voor ondernemers. Zonder technisch gedoe, razendsnel geleverd en klaar om klanten te trekken. Maker van o.a. StudyElite.nl.",
   url: "https://agevodev.nl",
   email: "info@agevodev.nl",
-  phone: "+31 (0)6 12 34 56 78",
+  phone: "06 87082516",
+  whatsappNumber: "06 87082516",
+  whatsappLink:
+    "https://wa.me/31687082516?text=Hoi%20Bram%2C%20ik%20heb%20een%20vraag%20over%20een%20website%20laten%20maken%20bij%20AgevoDev",
   /**
    * Cal.com link of gebruikersnaam voor online kennismaking inplannen.
    * Bijv: "agevo/15min"
@@ -15,24 +21,27 @@ export const siteConfig = {
   kvk: "42160840",
   location: "Nederland",
   city: "Nederland",
-  address: "Nederland (op afspraak)",
+  address: "Nederland (online & op afspraak)",
   navigation: [
-    { label: "Diensten", href: "#diensten" },
-    { label: "Ventures & Portfolio", href: "#ventures", badge: "Live" },
-    { label: "Werkwijze & Over Ons", href: "#over-ons" },
+    { label: "Diensten & Prijzen", href: "#diensten" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Werkwijze", href: "#werkwijze" },
+    { label: "Over Bram", href: "#over-bram" },
+    { label: "Veelgestelde Vragen", href: "#faq" },
     { label: "Contact", href: "#contact" },
-  ],
+  ] as NavItem[],
   stats: [
-    { value: "100%", label: "Maatwerk Codebase", detail: "Geen trage no-code templates" },
-    { value: "99.9%", label: "Platform Betrouwbaarheid", detail: "High-availability cloud stack" },
-    { value: "2x-3x", label: "Snellere Time-to-Market", detail: "Moderne Next.js component stack" },
-    { value: "Eigen SaaS", label: "In Productie", detail: "Bewezen ervaring als founders" },
+    { value: "100%", label: "Zonder Gedoe", detail: "Ik regel alles van A tot Z" },
+    { value: "1-2 wk", label: "Snelle Oplevering", detail: "Direct klaar om online te gaan" },
+    { value: "100%", label: "Jouw Eigendom", detail: "Geen verborgen abonnementen" },
+    { value: "Bewezen", label: "Eigen Platformen", detail: "Maker van o.a. StudyElite.nl" },
   ],
   socials: {
     instagram: "https://www.instagram.com/agevodev/",
     instagramHandle: "@agevodev",
-    github: "https://github.com/bram-verhoeff",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/company/146490060/",
+    linkedinCompany: "https://www.linkedin.com/company/146490060/",
+    linkedinPersonal: "https://www.linkedin.com/in/bram-verhoeff/",
     twitter: "https://x.com",
   },
 };
