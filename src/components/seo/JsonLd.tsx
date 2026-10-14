@@ -8,35 +8,56 @@ export function JsonLd() {
         "@type": "Organization",
         "@id": `${siteConfig.url}/#organization`,
         name: "AgevoDev",
-        legalName: "AgevoDev B.V.",
+        legalName: "Agevo",
+        identifier: "42160840",
         url: siteConfig.url,
         logo: `${siteConfig.url}/logo.png`,
         image: `${siteConfig.url}/logo.png`,
         email: siteConfig.email,
+        telephone: "+31687082516",
         description: siteConfig.description,
+        founder: {
+          "@type": "Person",
+          name: "Bram Verhoeff",
+          url: "https://bramverhoeff.nl",
+        },
         sameAs: [
           siteConfig.socials.instagram,
           siteConfig.socials.linkedinCompany,
           siteConfig.socials.linkedinPersonal,
+          "https://github.com/bram-verhoeff",
+          "https://bramverhoeff.nl",
+          "https://studyelite.nl",
         ],
         contactPoint: {
           "@type": "ContactPoint",
           email: siteConfig.email,
+          telephone: "+31687082516",
           contactType: "customer service",
           areaServed: "NL",
           availableLanguage: ["Dutch", "English"],
         },
         address: {
           "@type": "PostalAddress",
+          addressLocality: "Den Haag",
+          addressRegion: "Zuid-Holland",
           addressCountry: "NL",
         },
-        subOrganization: {
-          "@type": "Product",
-          name: "StudyElite",
-          url: "https://studyelite.nl",
-          description:
-            "AI-gedreven studieplanner & educatieve SaaS tool voor studenten en professionals.",
-        },
+        owns: [
+          {
+            "@type": "SoftwareApplication",
+            name: "StudyElite",
+            url: "https://studyelite.nl",
+            applicationCategory: "EducationalApplication",
+            description:
+              "AI-gedreven studieplanner & educatieve SaaS tool voor scholieren en studenten.",
+          },
+          {
+            "@type": "WebSite",
+            name: "Prime Resell",
+            url: "https://primeresell.nl",
+          },
+        ],
       },
       {
         "@type": "WebSite",
@@ -52,57 +73,15 @@ export function JsonLd() {
       {
         "@type": "ProfessionalService",
         "@id": `${siteConfig.url}/#service`,
-        name: "Agevo | Tech Studio & Software Development",
+        name: "Agevo | Websites, SaaS & AI Automatisering",
         url: siteConfig.url,
         parentOrganization: {
           "@id": `${siteConfig.url}/#organization`,
         },
-        priceRange: "€€€",
+        priceRange: "€€",
         areaServed: {
           "@type": "Country",
           name: "Netherlands",
-        },
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Agevo Diensten",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Full-Stack Web & Platform Development",
-                description:
-                  "Next.js App Router, React 19, TypeScript en ultra-snelle maatwerk webapplicaties.",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "SaaS & MVP Development",
-                description:
-                  "Van idee naar marktklare SaaS-applicatie met multi-tenant auth en Stripe/Mollie billing.",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Automatisering & AI Integraties",
-                description:
-                  "Slimme AI-agents, LLM-koppelingen (OpenAI, Claude) en procesautomatiseringen.",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Cloud Architectuur & Hosting",
-                description:
-                  "Serverless cloud infrastructuren, veilige databases en zero-downtime CI/CD pipelines.",
-              },
-            },
-          ],
         },
       },
     ],

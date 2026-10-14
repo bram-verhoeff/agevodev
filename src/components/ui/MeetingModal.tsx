@@ -14,6 +14,7 @@ import {
   ExternalLink,
   ShieldCheck,
   Video,
+  AlertCircle,
 } from "lucide-react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { siteConfig } from "@/data/siteConfig";
@@ -32,28 +33,26 @@ export function MeetingModal({
   const [activeTab, setActiveTab] = useState<"calendar" | "form">(defaultTab);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [calLoaded, setCalLoaded] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    topic: "SaaS & Webapplicatie Maatwerk",
+    topic: "Bedrijfswebsite / Webshop",
     timeframe: "Binnen 1-2 weken",
     message: "",
   });
 
-  // Clean Cal.com link (strips full url prefix if user entered https://cal.com/...)
-  const calLink = (siteConfig.calLink || "bram-verhoeff/kennismaking")
+  const calLink = (siteConfig.calLink || "agevo/15min")
     .replace(/^https?:\/\/(www\.)?cal\.com\//, "")
     .replace(/^\/+/, "");
 
   const fullCalUrl = `https://cal.com/${calLink}`;
 
-  // Reset tab when modal opens
   useEffect(() => {
     if (isOpen) {
       setActiveTab(defaultTab);
-      // Lock background scroll
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -63,7 +62,6 @@ export function MeetingModal({
     };
   }, [isOpen, defaultTab]);
 
-  // Handle escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -74,7 +72,6 @@ export function MeetingModal({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Configure Cal UI styling & theme
   useEffect(() => {
     if (!isOpen) return;
 
@@ -103,21 +100,45 @@ export function MeetingModal({
     };
   }, [isOpen]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          projectType: formData.topic,
+          budget: `Termijn: ${formData.timeframe}`,
+          message: formData.message || `Aanvraag via Modal (${formData.topic} - ${formData.timeframe})`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Verzenden mislukt.");
+      }
+
       setIsSubmitted(true);
-    }, 700);
+    } catch {
+      setSubmitError(
+        "Kon bericht niet automatisch versturen. Stuur direct een appje of mail naar info@agevodev.nl."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleResetForm = () => {
     setIsSubmitted(false);
+    setSubmitError(null);
     setFormData({
       name: "",
       email: "",
-      topic: "SaaS & Webapplicatie Maatwerk",
+      topic: "Bedrijfswebsite / Webshop",
       timeframe: "Binnen 1-2 weken",
       message: "",
     });
@@ -145,7 +166,6 @@ export function MeetingModal({
             transition={{ duration: 0.22, ease: "easeOut" }}
             className="relative w-full max-w-4xl h-[90vh] max-h-[780px] rounded-2xl glass-panel text-white shadow-2xl z-10 flex flex-col overflow-hidden border border-white/10"
           >
-            {/* Top glowing ambient line */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent z-20" />
 
             {/* Modal Header */}
@@ -161,39 +181,36 @@ export function MeetingModal({
                 <div className="hidden sm:block h-5 w-[1px] bg-white/10" />
                 <div className="hidden sm:flex items-center gap-1.5 text-xs text-indigo-300 font-medium">
                   <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>Vrijblijvend adviesgesprek</span>
+                  <span>Vrijblijvend adviesgesprek met Bram</span>
                 </div>
               </div>
 
-              {/* Action Buttons & Close */}
               <div className="flex items-center gap-2 self-end sm:self-auto">
-                {/* Tabs */}
                 <div className="flex items-center p-1 rounded-xl bg-white/5 border border-white/10 text-xs">
                   <button
+                    type="button"
                     onClick={() => setActiveTab("calendar")}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all ${
-                      activeTab === "calendar"
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${activeTab === "calendar"
                         ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30"
                         : "text-slate-400 hover:text-white"
-                    }`}
+                      }`}
                   >
                     <CalendarIcon className="w-3.5 h-3.5" />
                     <span>Direct Inplannen</span>
                   </button>
                   <button
+                    type="button"
                     onClick={() => setActiveTab("form")}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all ${
-                      activeTab === "form"
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${activeTab === "form"
                         ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30"
                         : "text-slate-400 hover:text-white"
-                    }`}
+                      }`}
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
                     <span>Bericht Sturen</span>
                   </button>
                 </div>
 
-                {/* External Link button (Cal.com) */}
                 <a
                   href={fullCalUrl}
                   target="_blank"
@@ -204,10 +221,10 @@ export function MeetingModal({
                   <ExternalLink className="w-4 h-4" />
                 </a>
 
-                {/* Close button */}
                 <button
+                  type="button"
                   onClick={onClose}
-                  className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                  className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 cursor-pointer"
                   aria-label="Sluit venster"
                 >
                   <X className="w-5 h-5" />
@@ -219,12 +236,11 @@ export function MeetingModal({
             <div className="flex-1 overflow-y-auto relative bg-[#07090e]/60">
               {activeTab === "calendar" ? (
                 <div className="h-full flex flex-col">
-                  {/* Subtle info banner */}
                   <div className="px-5 sm:px-8 py-3 bg-indigo-500/10 border-b border-indigo-500/20 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-300">
                     <div className="flex items-center gap-2">
                       <Video className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
                       <span>
-                        Kies hieronder direct een datum en tijdstip voor een online videocall (Google Meet).
+                        Kies hieronder direct een datum en tijdstip voor een korte online kennismaking (15 min).
                       </span>
                     </div>
                     <a
@@ -238,7 +254,6 @@ export function MeetingModal({
                     </a>
                   </div>
 
-                  {/* Calendar Embed */}
                   <div className="flex-1 min-h-[480px] w-full relative">
                     {!calLoaded && (
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-slate-400">
@@ -254,14 +269,13 @@ export function MeetingModal({
                     />
                   </div>
 
-                  {/* Footer note */}
                   <div className="px-6 py-3 border-t border-white/5 bg-[#0a0e1c]/60 flex flex-wrap items-center justify-between text-[11px] text-slate-400 gap-2">
                     <div className="flex items-center gap-1.5">
                       <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>100% vrijblijvend en vertrouwelijk</span>
+                      <span>100% vrijblijvend • KvK: {siteConfig.kvk}</span>
                     </div>
                     <span>
-                      Liever e-mailen?{" "}
+                      Liever direct mailen?{" "}
                       <a
                         href={`mailto:${siteConfig.email}`}
                         className="text-indigo-300 hover:underline"
@@ -272,16 +286,15 @@ export function MeetingModal({
                   </div>
                 </div>
               ) : (
-                /* Contact Form Tab */
                 <div className="p-6 sm:p-8 max-w-xl mx-auto h-full flex flex-col justify-center">
                   {!isSubmitted ? (
                     <div>
                       <div className="mb-5 text-center sm:text-left">
                         <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1.5">
-                          Stuur mij een bericht
+                          Stuur Bram direct een bericht
                         </h3>
                         <p className="text-xs sm:text-sm text-slate-400">
-                          Heb je een vraag, specifiek project of wil je eerst per mail schakelen? Laat een bericht achter en ik reageer binnen 24 uur.
+                          Laat je gegevens en wensen achter, dan neem ik binnen 24 uur persoonlijk contact met je op.
                         </p>
                       </div>
 
@@ -289,7 +302,7 @@ export function MeetingModal({
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <div>
                             <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                              Naam *
+                              Jouw Naam *
                             </label>
                             <input
                               type="text"
@@ -298,14 +311,14 @@ export function MeetingModal({
                               onChange={(e) =>
                                 setFormData({ ...formData, name: e.target.value })
                               }
-                              placeholder="bijv. Bram Verhoeff"
+                              placeholder="Jan de Vries"
                               className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                             />
                           </div>
 
                           <div>
                             <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                              Zakelijk e-mailadres *
+                              E-mailadres *
                             </label>
                             <input
                               type="email"
@@ -314,7 +327,7 @@ export function MeetingModal({
                               onChange={(e) =>
                                 setFormData({ ...formData, email: e.target.value })
                               }
-                              placeholder="jouw@bedrijf.nl"
+                              placeholder="naam@bedrijf.nl"
                               className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                             />
                           </div>
@@ -332,16 +345,18 @@ export function MeetingModal({
                               }
                               className="w-full px-3 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-white text-xs focus:outline-none focus:border-indigo-500 transition-all"
                             >
+                              <option value="Bedrijfswebsite / Webshop">
+                                Bedrijfswebsite / Webshop
+                              </option>
                               <option value="SaaS & Webapplicatie Maatwerk">
-                                SaaS / Web Maatwerk
+                                SaaS & Webapplicatie Maatwerk
                               </option>
-                              <option value="AI & Automatisering">
-                                AI & Automatisering
+                              <option value="AI & GoHighLevel Automatisering">
+                                AI & GoHighLevel Automatisering
                               </option>
-                              <option value="Samenwerking / Venture">
-                                Venture / Samenwerking
+                              <option value="Starter Portfolio (€30,-)">
+                                Starter Portfolio (€30,-)
                               </option>
-                              <option value="Overig">Oriënterend Gesprek</option>
                             </select>
                           </div>
                           <div>
@@ -358,31 +373,39 @@ export function MeetingModal({
                               <option value="Zo snel mogelijk">Zo snel mogelijk</option>
                               <option value="Binnen 1-2 weken">Binnen 1-2 weken</option>
                               <option value="Binnen een maand">Binnen een maand</option>
-                              <option value="Oriënterend">Later dit kwartaal</option>
+                              <option value="Oriënterend">Oriënterend</option>
                             </select>
                           </div>
                         </div>
 
                         <div>
                           <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                            Korte toelichting (optioneel)
+                            Korte toelichting *
                           </label>
                           <textarea
                             rows={3}
+                            required
                             value={formData.message}
                             onChange={(e) =>
                               setFormData({ ...formData, message: e.target.value })
                             }
-                            placeholder="Beschrijf in het kort waar ik je mee kan helpen..."
+                            placeholder="Vertel kort waar ik je mee kan helpen..."
                             className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none"
                           />
                         </div>
+
+                        {submitError && (
+                          <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center gap-2 text-xs text-red-300">
+                            <AlertCircle className="w-4 h-4 shrink-0 text-red-400" />
+                            <span>{submitError}</span>
+                          </div>
+                        )}
 
                         <div className="pt-2">
                           <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full relative group overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500 to-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all disabled:opacity-50"
+                            className="w-full relative group overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500 to-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all disabled:opacity-50 cursor-pointer"
                           >
                             <div className="flex items-center justify-center gap-2">
                               {isSubmitting ? (
@@ -392,7 +415,7 @@ export function MeetingModal({
                                 </>
                               ) : (
                                 <>
-                                  <span>Bericht Versturen</span>
+                                  <span>Aanvraag Versturen</span>
                                   <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </>
                               )}
@@ -400,7 +423,7 @@ export function MeetingModal({
                           </button>
                           <p className="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1.5">
                             <Clock className="w-3 h-3 text-emerald-400" />
-                            Reactie binnen 24 uur per e-mail
+                            Reactie binnen 24 uur
                           </p>
                         </div>
                       </form>
@@ -411,10 +434,10 @@ export function MeetingModal({
                         <CheckCircle2 className="w-8 h-8" />
                       </div>
                       <h3 className="text-xl font-bold text-white">
-                        Bedankt voor je bericht!
+                        Bericht succesvol ontvangen!
                       </h3>
                       <p className="text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
-                        Ik heb je gegevens ontvangen. Ik neem binnen 24 uur persoonlijk contact met je op via{" "}
+                        Bedankt <strong className="text-white">{formData.name}</strong>! Ik neem binnen 24 uur contact met je op via{" "}
                         <span className="text-indigo-300 font-medium">
                           {formData.email}
                         </span>
@@ -422,19 +445,11 @@ export function MeetingModal({
                       </p>
                       <div className="pt-4 flex items-center justify-center gap-3">
                         <button
+                          type="button"
                           onClick={handleResetForm}
-                          className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-sm font-medium text-white transition-colors"
+                          className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-sm font-medium text-white transition-colors cursor-pointer"
                         >
                           Sluiten
-                        </button>
-                        <button
-                          onClick={() => {
-                            setIsSubmitted(false);
-                            setActiveTab("calendar");
-                          }}
-                          className="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-sm font-semibold text-white transition-colors"
-                        >
-                          Toch direct inplannen
                         </button>
                       </div>
                     </div>

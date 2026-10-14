@@ -4,17 +4,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  CheckCircle2,
   Smile,
   Zap,
   Smartphone,
   Search,
   HeartHandshake,
   Layout,
-  Globe,
-  ShieldCheck,
+  Bot,
 } from "lucide-react";
-import { siteConfig } from "@/data/siteConfig";
 
 export function Hero() {
   const [activeTab, setActiveTab] = useState<"result" | "service" | "proof">("result");
@@ -33,16 +30,16 @@ export function Hero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs sm:text-sm font-medium text-slate-300 shadow-sm backdrop-blur-md"
+            className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs sm:text-sm font-medium text-slate-300 shadow-sm backdrop-blur-md"
           >
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            <span className="font-semibold text-white">Geen technisch gedoe</span>
-            <span className="text-slate-500">|</span>
+            <span className="font-semibold text-white">Software &amp; Web Studio Den Haag</span>
+            <span className="text-slate-500 hidden sm:inline">|</span>
             <span className="text-slate-300">
-              Websites &amp; webshops die <strong className="text-white font-semibold">nieuwe klanten opleveren</strong>
+              Websites, SaaS &amp; AI die <strong className="text-white font-semibold">direct rendement opleveren</strong>
             </span>
           </motion.div>
 
@@ -51,20 +48,20 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15]"
+            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.12]"
           >
-            Een professionele website laten maken{" "}
-            <span className="glow-indigo-text">voor jouw bedrijf.</span>
+            Websites &amp; software die{" "}
+            <span className="glow-indigo-text">klanten voor je winnen.</span>
           </motion.h1>
 
-          {/* Simple, friendly Subtitle */}
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed"
           >
-            Zonder ingewikkelde vaktermen of lange wachttijden. Ik ontwerp, bouw en beheer jouw complete website of webshop — snel, overzichtelijk en direct klaar voor resultaat.
+            Geen trage WordPress-templates of dure accountmanagers. Ik ontwerp, bouw en automatiseer razendsnelle bedrijfswebsites, webshops en AI-oplossingen — persoonlijk, voor een vaste prijs en binnen 1 tot 2 weken live.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -86,18 +83,18 @@ export function Hero() {
               href="#diensten"
               className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-semibold text-sm sm:text-base backdrop-blur-md hover:border-white/20 transition-all duration-200 flex items-center justify-center gap-2"
             >
-              <span>Wat ik voor jou bouw</span>
+              <span>Bekijk diensten &amp; prijzen</span>
             </a>
           </motion.div>
 
-          {/* Trust Highlights for non-technical visitors */}
+          {/* Trust Highlights */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-6 w-full border-t border-white/10"
           >
-            <div className="text-left p-3 rounded-xl bg-white/[0.02]">
+            <div className="text-left p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
               <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
                 <Smile className="w-6 h-6 text-indigo-400" />
                 100%
@@ -106,46 +103,46 @@ export function Hero() {
                 Zonder Technisch Gedoe
               </div>
               <div className="text-[11px] text-slate-400 mt-0.5">
-                Ik regel alles van A tot Z
+                Van domeinnaam tot livegang geregeld
               </div>
             </div>
 
-            <div className="text-left p-3 rounded-xl bg-white/[0.02]">
+            <div className="text-left p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
               <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
                 <Zap className="w-6 h-6 text-emerald-400" />
                 1-2 Weken
               </div>
               <div className="text-xs sm:text-sm font-semibold text-emerald-300 mt-1">
-                Snel Online
+                Razendsnel Online
               </div>
               <div className="text-[11px] text-slate-400 mt-0.5">
-                Geen maandenlange wachttijden
+                Geen maandenlange bureaucratie
               </div>
             </div>
 
-            <div className="text-left p-3 rounded-xl bg-white/[0.02]">
+            <div className="text-left p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
               <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
                 <Search className="w-6 h-6 text-blue-400" />
-                Google
+                Top SEO
               </div>
               <div className="text-xs sm:text-sm font-semibold text-blue-300 mt-1">
-                Direct Goed Vindbaar
+                Sterk in Google
               </div>
               <div className="text-[11px] text-slate-400 mt-0.5">
-                Geoptimaliseerd voor lokale klanten
+                100/100 snelheid &amp; lokale vindbaarheid
               </div>
             </div>
 
-            <div className="text-left p-3 rounded-xl bg-white/[0.02]">
+            <div className="text-left p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
               <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
                 <HeartHandshake className="w-6 h-6 text-purple-400" />
-                Persoonlijk
+                1-op-1
               </div>
               <div className="text-xs sm:text-sm font-semibold text-purple-300 mt-1">
-                Direct Contact
+                Direct met de Bouwer
               </div>
               <div className="text-[11px] text-slate-400 mt-0.5">
-                Gewoon bellen met de bouwer
+                Korte lijntjes via WhatsApp &amp; telefoon
               </div>
             </div>
           </motion.div>
@@ -166,41 +163,41 @@ export function Hero() {
                 <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                 <span className="text-xs font-medium text-slate-300 ml-2">
-                  Wat ik voor jou doe:
+                  Waarom ondernemers overstappen naar AgevoDev:
                 </span>
               </div>
 
               {/* Tabs */}
               <div className="flex items-center bg-black/40 rounded-xl p-1 border border-white/10 text-xs">
                 <button
+                  type="button"
                   onClick={() => setActiveTab("result")}
-                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
-                    activeTab === "result"
+                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "result"
                       ? "bg-indigo-600 text-white font-medium shadow"
                       : "text-slate-400 hover:text-white"
-                  }`}
+                    }`}
                 >
-                  Wat Jij Krijgt
+                  Meer Klanten &amp; ROI
                 </button>
                 <button
+                  type="button"
                   onClick={() => setActiveTab("service")}
-                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
-                    activeTab === "service"
+                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "service"
                       ? "bg-indigo-600 text-white font-medium shadow"
                       : "text-slate-400 hover:text-white"
-                  }`}
+                    }`}
                 >
-                  Zonder Zorgen
+                  Zorgeloos Beheer
                 </button>
                 <button
+                  type="button"
                   onClick={() => setActiveTab("proof")}
-                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
-                    activeTab === "proof"
+                  className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "proof"
                       ? "bg-indigo-600 text-white font-medium shadow"
                       : "text-slate-400 hover:text-white"
-                  }`}
+                    }`}
                 >
-                  Mijn Ervaring
+                  Eigen SaaS Bewijs
                 </button>
               </div>
             </div>
@@ -213,9 +210,9 @@ export function Hero() {
                     <div className="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
                       <Layout className="w-5 h-5" />
                     </div>
-                    <div className="text-sm font-bold text-white">Prachtig Modern Design</div>
+                    <div className="text-sm font-bold text-white">Geen Trage WordPress</div>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Jouw bedrijf straalt direct betrouwbaarheid en professionaliteit uit. Bezoekers zien meteen waarom ze voor jou moeten kiezen.
+                      Gebouwd op Next.js — dezelfde moderne techniek als grote techbedrijven. Laadt direct, loopt nooit vast op verouderde plugins en scoort maximaal in Google.
                     </p>
                   </div>
 
@@ -223,19 +220,19 @@ export function Hero() {
                     <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
                       <Smartphone className="w-5 h-5" />
                     </div>
-                    <div className="text-sm font-bold text-white">Perfect op Mobiel &amp; Tablet</div>
+                    <div className="text-sm font-bold text-white">Gebouwd voor Conversie</div>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Meer dan 70% van je bezoekers kijkt op een telefoon. Jouw site werkt vlekkeloos en laadt binnen een oogwenk op elk scherm.
+                      Meer dan 75% van je klanten bezoekt je mobiel. Elke knop, prijstabel en offerte-flow is ontworpen om van bezoekers betalende klanten te maken.
                     </p>
                   </div>
 
                   <div className="rounded-2xl bg-white/[0.03] border border-white/10 p-5 space-y-2.5">
                     <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
-                      <CheckCircle2 className="w-5 h-5" />
+                      <Bot className="w-5 h-5" />
                     </div>
-                    <div className="text-sm font-bold text-white">Meer Aanvragen &amp; Klanten</div>
+                    <div className="text-sm font-bold text-white">Slimme AI &amp; Automatisering</div>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Duidelijke belknoppen, simpele formulieren en opties voor online betalingen (iDEAL). Alles gericht op resultaat.
+                      Bespaar uren per week met slimme lead-opvolging, GoHighLevel workflows, automatische afspraakplanners en AI-assistenten.
                     </p>
                   </div>
                 </div>
@@ -246,25 +243,25 @@ export function Hero() {
                   <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
                     <div className="text-xs font-semibold text-emerald-400">✓ Hosting &amp; Domein</div>
                     <p className="text-xs text-slate-300 mt-1">
-                      Ik regel je webadres (.nl) en zorg dat je site 24/7 online en veilig blijft.
+                      Ik regel je domeinnaam (.nl/.com) en zorg dat je platform 24/7 razendsnel online staat.
                     </p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
-                    <div className="text-xs font-semibold text-indigo-400">✓ Beveiliging &amp; Backups</div>
+                    <div className="text-xs font-semibold text-indigo-400">✓ Veiligheid &amp; Backups</div>
                     <p className="text-xs text-slate-300 mt-1">
-                      Automatisch beschermd tegen hackers met groen SSL-slotje en dagelijkse backups.
+                      Standaard voorzien van SSL-encryptie, DDoS-bescherming en automatische back-ups.
                     </p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
-                    <div className="text-xs font-semibold text-purple-400">✓ Ondersteuning</div>
+                    <div className="text-xs font-semibold text-purple-400">✓ Directe WhatsApp Lijn</div>
                     <p className="text-xs text-slate-300 mt-1">
-                      Wil je later een tekst, foto of openingstijd aanpassen? Eén appje naar mij en ik regel het direct.
+                      Iets aanpassen of uitbreiden? Eén appje naar Bram en het wordt vaak dezelfde dag geregeld.
                     </p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
                     <div className="text-xs font-semibold text-cyan-400">✓ 100% Jouw Eigendom</div>
                     <p className="text-xs text-slate-300 mt-1">
-                      Geen verborgen abonnementen of wurgcontracten. De website is en blijft helemaal van jou.
+                      Geen wurgcontracten. De broncode, je domein en al je data zijn en blijven 100% van jou.
                     </p>
                   </div>
                 </div>
@@ -274,13 +271,13 @@ export function Hero() {
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-2">
                   <div className="space-y-2 max-w-xl text-left">
                     <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
-                      Zelf bewezen in de praktijk
+                      Zelf bewezen in de markt
                     </span>
                     <h4 className="text-lg font-bold text-white">
-                      Maker van onder andere StudyElite.nl
+                      Oprichter van o.a. StudyElite.nl, StarRate &amp; Prime Resell
                     </h4>
                     <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                      Ik ben geen theoretisch adviseur. Ik heb zelf succesvolle online platformen opgericht die dagelijks honderden actieve gebruikers helpen. Diezelfde passie en kwaliteit stop ik in jouw website!
+                      Ik bouw niet alleen voor klanten, maar lanceer en schaal zelf succesvolle online platformen. Diezelfde enterprise-techniek, AI-kennis en conversie-focus zet ik in voor jouw bedrijf.
                     </p>
                   </div>
 
@@ -288,7 +285,7 @@ export function Hero() {
                     href="#portfolio"
                     className="shrink-0 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold border border-white/10 flex items-center gap-1.5"
                   >
-                    <span>Bekijk StudyElite</span>
+                    <span>Bekijk mijn eigen ventures</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
